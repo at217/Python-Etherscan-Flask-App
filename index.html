@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain Chads</title>
+    <style>
+        body {
+            font-family: 'Pixelated MS Sans Serif', 'Arial', sans-serif;
+            background-color: #808080 ; /* Dark Grey background */
+            color: rgb(247, 241, 241); /* White text */
+            text-align: center;
+            padding: 20px;
+        }
+.win95-window {
+    background-color: #c0c0c0;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0px #808080;
+    margin: 20px auto;
+    width: 50%;
+    height:400px;
+    font-size: 20px;
+}
+
+
+
+.title-bar {
+        
+    display: flex;        /* Establish flex container */
+    align-items: center;  /* Vertically align items in the middle */
+    justify-content: center; /* Horizontally align items (optional) */
+
+    background-color: #000080;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.title-bar-text {
+    flex-grow: 1;
+}
+
+.title-bar-controls button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    /* Add styles for the buttons */
+}
+
+.window-body {
+    padding: 20px;
+
+}
+
+input[type="text"].win95-style {
+    font-family: 'MS Sans Serif', 'Arial', sans-serif;
+    border-top: 1px solid black; /* Light border for top and left */
+    border-left: 1px solid black;
+    border-bottom: 1px solid white; /* Darker border for bottom and right */
+    border-right: 1px solid white;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5); /* Inset shadow */
+    color: black; /* Text color */
+    padding: 5px; /* Padding inside the text box */
+    font-size: 16px; /* Adjust as needed */
+    width: 50%;
+    margin-top: 120px ;
+    background-color: white;
+}
+
+
+.windows95-taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #c0c0c0; /* Gray background */
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 4px 2px;
+    font-size: 20px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #808080;
+}
+
+.window-control img {
+    width: 40px; /* Adjust this value to your preference */
+    height: auto; /* This will maintain the aspect ratio */
+    cursor: pointer
+}
+
+.window-control:active img {
+    outline: 2px dotted white; /* Adjust the color and size as needed */
+    transform: translate(2.5px, 2.5px); /* Slightly move the image */
+    /* You can also add other effects like changing opacity */
+    transform: scale(0.90)
+    /* text-shadow: 1px 1px 2px black; */
+}
+
+.start-button {
+    display: flex;        /* Establish flex container */
+    align-items: center;  /* Vertically align items in the middle */
+    justify-content: center; /* Horizontally align items (optional) */
+    background-color: #c0c0c0;
+    border-top: 2px solid #fff; /* Light border for top and left */
+    border-left: 2px solid #fff;
+    border-bottom: 1px solid #808080; /* Darker border for bottom and right */
+    border-right: 1px solid #808080;
+    box-shadow: 1px 1px 2px #000; /* Shadow to add depth */
+    padding: 3px 20px;
+    margin-right: 18px;
+    font-family: 'Pixelated MS Sans Serif', 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    align-items: middle;
+    cursor: pointer;
+}
+
+.start-button img {
+    width: 50px;  /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px;
+    align-items: center;
+
+}
+.start-button:active {
+    outline: 2px dotted black; /* Adjust the color and size as needed */
+    transform: translate(2.5px, 2.5px); /* Slightly move the image */
+    transform: scale(0.95);
+    /* You can also add other effects like changing opacity */
+}
+
+.taskbar-section, .clock-section {
+    flex-grow: 1;
+}
+
+.taskbar-section {
+    display: flex;
+    justify-content: start;
+    margin-right: auto;
+}
+
+.language-section {
+    width: auto;
+    text-align: right;
+    margin-left: 1250px;
+    padding: 7px 3px;
+    margin-right: 5px;
+    box-shadow: 
+        -1px -1px 0 0 rgba(105, 105, 105, 0.7), /* Dark grey shadow on the top and left */
+        1px 1px 0 0 rgba(255, 255, 255, 0.7); /* White shadow on the right and bottom */
+
+    font-family: 'Pixelated MS Sans Serif', 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    align-items: center;
+
+}
+
+.clock-section {
+    width: auto;
+    text-align: right;
+    margin-left: 5px;
+    padding: 7px 3px;
+    margin-right: 10px;
+    box-shadow: 
+        -1px -1px 0 0 rgba(105, 105, 105, 0.7), /* Dark grey shadow on the top and left */
+        1px 1px 0 0 rgba(255, 255, 255, 0.7); /* White shadow on the right and bottom */
+
+    font-family: 'Pixelated MS Sans Serif', 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end
+}
+
+.voice-icon {
+    width: 25px;  /* Adjust the width as needed */
+    height: auto; /* This will maintain the aspect ratio */
+    margin-right: 5px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="win95-window">
+        <div class="title-bar">
+            <div class="title-bar-text">Enter your Ethereum Address for More Information</div>
+            <div class="title-bar-controls">
+                <button class="window-control minimize">
+                    <img src="{{ url_for('static', filename='minimise.png') }}"  alt="Minimize">
+                </button>
+                <button class="window-control maximize">
+                    <img src="{{ url_for('static', filename='maximise.png') }}"  alt="Maximize">
+                </button>
+                <button class="window-control close">
+                    <img src="{{ url_for('static', filename='close.png') }}" alt="Close">
+                </button>
+            </div>
+        </div>
+        <div class="window-body">
+            <!--  form and other content here -->
+            <input type="text" class="win95-style" placeholder="Input your Ethereum Address here.. 0x123ABC">
+        </div>
+    </div>
+      <div class="windows95-taskbar">
+        <button class="start-button">
+            <img src="{{ url_for('static', filename='windowslogo.png') }}" alt="Windows Icon" />
+            Start</button>
+        <div class="taskbar-section">
+        </div>
+        <div class="language-section">
+            EN 
+        </div>
+        <div class="clock-section">
+            <div class="audio-control">
+            <img src="{{ url_for('static', filename='voicelogo.png') }}" alt="Voice Icon" class="voice-icon" id="voice-icon" />
+            <audio id="audioPlayer" autoplay loop muted>
+                <source src="{{ url_for('static', filename='melody-clean-piano-honey_130bpm_C_minor.mp3') }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+            16:19 
+        </div>
+    </div>
+    <script>
+    document.getElementById('voice-icon').addEventListener('click', function () {
+        var audioPlayer = document.getElementById('audioPlayer');
+        if (audioPlayer.paused || audioPlayer.muted) {
+            audioPlayer.muted = false;
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    });
+    </script>
+</body>
+</body>
+</html>
